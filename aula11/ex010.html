@@ -6,24 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DETRAN</title>
   </head>
+  <style>
+    body {
+      background-color: rgba(202, 202, 51, 0.562);
+    }
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bolder;
+    }
+    input {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: bold;
+      color: black;
+      background-color: rgba(128, 128, 128, 0.562);
+      border-radius: 5px;
+    }
+    #velo {
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      font-weight: bolder;
+      font-size: 1.5em;
+      color: rgb(218, 23, 23);
+    }
+
+    #p1 {
+      color: blue;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: italic;
+    }
+    #p2 {
+      color: red;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: italic;
+    }
+    #p3 {
+      color: blueviolet;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: italic;
+    }
+  </style>
   <body>
     <h1>Sitema de multa</h1>
-    velocidade do carro: <input type="number" name="txtvel" id="txtvel" /> hm/h
-    <input type="button" value="verificar" onclick="calcular()" />
+    <div id="velo">
+      Velocidade do carro:
+      <input type="number" name="txtvel" id="txtvel" />
+      hm/h
+      <input type="button" value="verificar" onclick="calcular()" />
+    </div>
+
     <div id="res">
       <div>
         <script>
-          function calcular(){
-              const txtv = window.document.querySelector('input#txtvel')
-              const res = window.document.querySelector('div#res')
-              var vel = Number(txtv.value)
-              res.innerHTML = `<p> Sua velocidade atual é de <strong> ${vel} km/h </strong></p>`
-              if(vel >60){
-                  res.innerHTML += 'Você esta <strong>MULTADO</strong> por excesso de velocidade'
-                }else { 
-                    
-                    res.innerHTML ='Não fez mais nada que a sua obrigação <strong> BASICA</strong>'
-              }
+          function calcular() {
+            const txtv = window.document.querySelector("input#txtvel");
+            const res = window.document.querySelector("div#res");
+            var vel = Number(txtv.value);
+            res.innerHTML = `<p id="p1"> Sua velocidade atual é de <strong> ${vel} km/h </strong></p>`;
+            if (vel > 60) {
+              res.innerHTML +=
+                "<p id='p2'>Você esta <strong>MULTADO</strong> por excesso de velocidade</p>";
+            } else {
+              res.innerHTML =
+                "<p id='p3'> Não fez mais nada que a sua obrigação <strong> BASICA </strong></p>";
+            }
           }
         </script>
       </div>
