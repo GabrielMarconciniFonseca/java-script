@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pais de Origem</title>
+
+    <style>
+      body {
+        background-color: blueviolet;
+        text-align: center;
+      }
+      #p1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        color: white;
+        margin-top: 20px;
+      }
+      #p2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        color: white;
+        margin-top: 20px;
+      }
+      #origem {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Qual seu pais de origem ?</h1>
+
+    <div id="origem">
+      PAIS DE ORIGEM :
+      <input type="text" name="origem" id="origem" />
+      <input type="button" value="consultar" onclick="consultar()" />
+    </div>
+
+    <div id="res">
+      <div>
+        <script>
+          function consultar() {
+            const pais = window.document.querySelector("input#origem");
+            const res = window.document.querySelector("div#res");
+            const ori = pais.value;
+            if (ori == "brasil") {
+              res.innerHTML = "<p id=p1>Você é brasileiro :)</p>";
+            } else {
+              res.innerHTML = "<p id=p2>Vocẽ é Gringo</p>";
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
