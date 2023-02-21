@@ -5,7 +5,7 @@ while(e<=10){
 
 
 
-/*var f=1
+var f=1
 for(f=1;e<=10;c++){
     console.log(`Passo ${f}`)
-}*/
+}
