@@ -1,11 +1,8 @@
-var e = 1
-while(e<=10){
-    c++
-}
 
 
 
 var f=1
-for(f=1;e<=10;c++){
+
+for(var f = 1; f <= 1100 ; f++){
     console.log(`Passo ${f}`)
 }
